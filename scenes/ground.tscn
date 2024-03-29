@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cntbmsmy7ymbg"]
+
+[ext_resource type="Texture2D" uid="uid://ca2wniex8vudv" path="res://assets/Backgrounds/Nature_environment_01.png" id="1_ck3mx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aigux"]
+texture = ExtResource("1_ck3mx")
+19:7/size_in_atlas = Vector2i(6, 3)
+19:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u7qpb"]
+sources/0 = SubResource("TileSetAtlasSource_aigux")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndem5"]
+size = Vector2(1344, 39.5)
+
+[node name="Ground" type="StaticBody2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u7qpb")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376258, 1245184, 7, 1376264, 1245184, 7, 1376270, 1245184, 7, 1376276, 1245184, 7, 1376282, 1245184, 7, 1376288, 1245184, 7, 1376294, 1245184, 7)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u7qpb")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376300, 1245184, 7, 1376306, 1245184, 7, 1376312, 1245184, 7, 1376318, 1245184, 7, 1376324, 1245184, 7, 1376330, 1245184, 7, 1376336, 1245184, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(664, 340.25)
+shape = SubResource("RectangleShape2D_ndem5")

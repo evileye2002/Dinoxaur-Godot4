@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1a4aq1rkgrut"]
+
+[ext_resource type="PackedScene" uid="uid://cntbmsmy7ymbg" path="res://scenes/ground.tscn" id="1_nro0e"]
+[ext_resource type="PackedScene" uid="uid://5v1iqesdoe0e" path="res://scenes/background.tscn" id="2_p1qis"]
+[ext_resource type="PackedScene" uid="uid://cfy556167gjmm" path="res://scenes/player.tscn" id="3_gasb5"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_nro0e")]
+
+[node name="Background" parent="." instance=ExtResource("2_p1qis")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="Player" parent="." instance=ExtResource("3_gasb5")]
+position = Vector2(88, 264)
