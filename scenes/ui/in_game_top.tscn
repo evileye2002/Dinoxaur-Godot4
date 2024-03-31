@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj5meuyyihx6j"]
+
+[ext_resource type="Theme" uid="uid://5nyl5dj5huyj" path="res://themes/theme_1.tres" id="2_i0dx4"]
+
+[node name="InGameTop" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HealthBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Score" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_i0dx4")
+theme_override_constants/separation = 5
+
+[node name="ScoreValue" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"

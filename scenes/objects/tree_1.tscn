@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://y6w408jy8pqs"]
+
+[ext_resource type="Texture2D" uid="uid://cphqwy70hh6tj" path="res://assets/Objects/pink_bush2.png" id="1_fngxp"]
+
+[node name="Rock1" type="Area2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_fngxp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(9.5, -7, 10, -1.5, 12, 0, 14, 2.5, 14, 6, 12, 7.5, 8, 8, 5.5, 7, 4.5, 9, 1, 9, 1, 14, -3, 14, -3.5, 12, -8, 12, -9.5, 10, -12.5, 10, -14.5, 8, -15, 2, -13, 0, -9, 0, -11, -3.5, -11, -11.5, -8, -15, 2, -15, 5.5, -11)

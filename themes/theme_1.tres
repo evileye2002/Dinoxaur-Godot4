@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://5nyl5dj5huyj"]
+
+[ext_resource type="FontFile" uid="uid://c8pw7vj6optll" path="res://assets/Fonts/RetroSans.ttf" id="1_5ijs6"]
+[ext_resource type="Texture2D" uid="uid://ce1y2o4eqpgs5" path="res://assets/GUI/ButtonFrame1.png" id="1_707ni"]
+[ext_resource type="Texture2D" uid="uid://cnfu274uxfao2" path="res://assets/GUI/box.png" id="1_ahyio"]
+[ext_resource type="Texture2D" uid="uid://bqg860s24t74k" path="res://assets/GUI/ButtonFrame2.png" id="2_j6fkb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgp5s"]
+texture = ExtResource("2_j6fkb")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma55q"]
+texture = ExtResource("2_j6fkb")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvaaf"]
+texture = ExtResource("1_707ni")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8ty6"]
+texture = ExtResource("1_707ni")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77q7y"]
+texture = ExtResource("1_ahyio")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 4
+Button/fonts/font = ExtResource("1_5ijs6")
+Button/styles/disabled = SubResource("StyleBoxTexture_bgp5s")
+Button/styles/hover = SubResource("StyleBoxTexture_ma55q")
+Button/styles/normal = SubResource("StyleBoxTexture_hvaaf")
+Button/styles/pressed = SubResource("StyleBoxTexture_f8ty6")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+Label/fonts/font = ExtResource("1_5ijs6")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_77q7y")

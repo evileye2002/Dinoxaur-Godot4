@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx366ygm0ehjq"]
+
+[ext_resource type="Theme" uid="uid://5nyl5dj5huyj" path="res://themes/theme_1.tres" id="1_a1nnh"]
+
+[node name="Test" type="Node2D"]
+texture_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 112.0
+offset_top = -8.0
+offset_right = 496.0
+offset_bottom = 184.0
+theme = ExtResource("1_a1nnh")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Hoang Duong Khanh"
+
+[node name="Button" type="Button" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Butonasdjasdkajskdkaskd"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dorckidnupe12"]
+
+[ext_resource type="Script" path="res://scenes/objects/object.gd" id="1_t7ag8"]
+[ext_resource type="Texture2D" uid="uid://qe3m4f6fbp31" path="res://assets/Objects/rocks_6.png" id="2_oeqht"]
+
+[node name="Rock1" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_t7ag8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_oeqht")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(15, 13, 12, 15.5, -14.5, 15.5, -13, 6, -11, -2.5, -7.5, -4, -7, -12.5, -5, -15, 1, -15.5, 6.5, -6.5, 15, 8.5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

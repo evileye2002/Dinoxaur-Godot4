@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cfy556167gjmm"]
+[gd_scene load_steps=32 format=3 uid="uid://cfy556167gjmm"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4wu7p"]
 [ext_resource type="Texture2D" uid="uid://cfmomsqdlb8p6" path="res://assets/Characters/olaf_right.png" id="1_uye3x"]
@@ -10,28 +10,6 @@
 [ext_resource type="Script" path="res://scenes/player/Jump.gd" id="8_r2okq"]
 [ext_resource type="Script" path="res://scenes/player/Fall.gd" id="9_pklq7"]
 [ext_resource type="Script" path="res://scenes/player/DuckInAir.gd" id="10_wbhpp"]
-[ext_resource type="Script" path="res://scenes/player/Dead.gd" id="11_3afvt"]
-[ext_resource type="Script" path="res://scenes/player/Hurt.gd" id="12_bbuqc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mnhho"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpqhs"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_onaud"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3vks"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(72, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ab6a6"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(96, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3o04x"]
 atlas = ExtResource("1_uye3x")
@@ -65,22 +43,6 @@ region = Rect2(120, 24, 24, 24)
 atlas = ExtResource("1_uye3x")
 region = Rect2(72, 72, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rwb5"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(0, 96, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ojiy5"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(24, 96, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kpkq"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(48, 96, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4c43g"]
-atlas = ExtResource("1_uye3x")
-region = Rect2(72, 96, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxvl0"]
 atlas = ExtResource("2_dq5yp")
 region = Rect2(0, 0, 24, 24)
@@ -93,9 +55,9 @@ region = Rect2(24, 0, 24, 24)
 atlas = ExtResource("2_dq5yp")
 region = Rect2(48, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o5exr"]
-atlas = ExtResource("2_dq5yp")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1wbt"]
+atlas = ExtResource("1_uye3x")
+region = Rect2(48, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x52l5"]
 atlas = ExtResource("1_uye3x")
@@ -125,29 +87,6 @@ region = Rect2(120, 0, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mnhho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpqhs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onaud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y3vks")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ab6a6")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": false,
-"name": &"dead",
-"speed": 16.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3o04x")
 }],
 "loop": false,
@@ -175,7 +114,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"duck_run",
-"speed": 14.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,23 +123,6 @@ animations = [{
 "loop": false,
 "name": &"fall",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6rwb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ojiy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kpkq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4c43g")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -218,7 +140,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o5exr")
+"texture": SubResource("AtlasTexture_d1wbt")
 }],
 "loop": false,
 "name": &"jump",
@@ -245,76 +167,74 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 14.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbg54"]
-size = Vector2(8, 16)
+size = Vector2(12, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk60d"]
-size = Vector2(13, 14)
+size = Vector2(16, 14)
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
-z_index = 1
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_4wu7p")
 
 [node name="PlayerAnimations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xx8gs")
-animation = &"dead"
+animation = &"duck_run"
+frame_progress = 0.000821952
 
 [node name="NormalCol" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.75)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_tbg54")
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
-position = Vector2(3, 1.75)
+position = Vector2(4, 2)
 shape = SubResource("RectangleShape2D_wk60d")
 debug_color = Color(0.788235, 0.392157, 0.470588, 0.419608)
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("4_1ou8i")]
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("jump_state", "fall_state")]
+[node name="Idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state", "jump_state", "fall_state")]
 script = ExtResource("5_1wm2g")
+run_state = NodePath("../Run")
 jump_state = NodePath("../Jump")
 fall_state = NodePath("../Fall")
 animation_name = "idle"
 
-[node name="Run" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("duck_run_state", "jump_state")]
+[node name="Run" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
 script = ExtResource("6_qlxup")
-duck_run_state = NodePath("../DuckRun")
+idle_state = NodePath("../Idle")
 jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
 animation_name = "run"
 
-[node name="DuckRun" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state")]
+[node name="DuckRun" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state")]
 script = ExtResource("7_vxtyi")
+idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
+jump_state = NodePath("../Jump")
 animation_name = "duck_run"
 
-[node name="DuckInAir" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("duck_run_state")]
+[node name="DuckInAir" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("10_wbhpp")
-duck_run_state = NodePath("../DuckRun")
+idle_state = NodePath("../Idle")
 animation_name = "duck_in_air"
 
-[node name="Jump" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("duck_in_air_state", "fall_state")]
+[node name="Jump" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "duck_in_air_state", "fall_state")]
 script = ExtResource("8_r2okq")
+idle_state = NodePath("../Idle")
+run_state = NodePath("../Run")
 duck_in_air_state = NodePath("../DuckInAir")
 fall_state = NodePath("../Fall")
 animation_name = "jump"
 
-[node name="Fall" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state", "duck_in_air_state")]
+[node name="Fall" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "duck_in_air_state")]
 script = ExtResource("9_pklq7")
+idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 duck_in_air_state = NodePath("../DuckInAir")
 animation_name = "fall"
-
-[node name="Dead" type="Node2D" parent="StateMachine"]
-script = ExtResource("11_3afvt")
-animation_name = "dead"
-
-[node name="Hurt" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state")]
-script = ExtResource("12_bbuqc")
-run_state = NodePath("../Run")
-animation_name = "hurt"
