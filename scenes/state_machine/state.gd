@@ -24,3 +24,7 @@ func process_frame(delta: float) -> State:
 
 func process_physics(delta: float) -> State:
 	return null
+
+func set_base_gravity(delta: float):
+	parent.velocity.y += gravity * delta
+	parent.move_and_slide()

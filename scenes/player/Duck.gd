@@ -12,9 +12,7 @@ func enter() -> void:
 	duck_col.disabled = false
 
 func process_physics(delta: float) -> State:
-	gravity = base_gravity
-	parent.velocity.y += gravity * delta
-	parent.move_and_slide()
+	set_base_gravity(delta)
 	
 	if !Input.is_action_pressed('duck'):
 		return run_state

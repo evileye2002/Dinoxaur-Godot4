@@ -48,9 +48,15 @@ func is_last_obj_out_screen(screen_size, camera_pos):
 
 func update_object_types():
 	match parrent.difficulty:
+		0: if object_types.size() > 1:
+			object_types = [ROCK_1]
 		1: if object_types.size() < 3:
 			object_types = [ROCK_1,ROCK_2,ROCK_2]
 		2: if object_types.size() < 4:
 			object_types = [ROCK_1,ROCK_2,ROCK_2,ROCK_3]
 		3: if object_types.size() < 6:
 			object_types = [ROCK_1,ROCK_2,ROCK_2,ROCK_2,ROCK_3,ROCK_3]
+
+func new_game():
+	for child in get_children():
+		child.queue_free()

@@ -1,44 +1,44 @@
 [gd_resource type="Theme" load_steps=10 format=3 uid="uid://5nyl5dj5huyj"]
 
 [ext_resource type="FontFile" uid="uid://c8pw7vj6optll" path="res://assets/Fonts/RetroSans.ttf" id="1_5ijs6"]
-[ext_resource type="Texture2D" uid="uid://ce1y2o4eqpgs5" path="res://assets/GUI/ButtonFrame1.png" id="1_707ni"]
-[ext_resource type="Texture2D" uid="uid://cnfu274uxfao2" path="res://assets/GUI/box.png" id="1_ahyio"]
-[ext_resource type="Texture2D" uid="uid://bqg860s24t74k" path="res://assets/GUI/ButtonFrame2.png" id="2_j6fkb"]
+[ext_resource type="Texture2D" uid="uid://bqg860s24t74k" path="res://assets/GUI/ButtonFrame2.png" id="2_0lvaj"]
+[ext_resource type="Texture2D" uid="uid://ce1y2o4eqpgs5" path="res://assets/GUI/ButtonFrame1.png" id="3_njo73"]
+[ext_resource type="Texture2D" uid="uid://cuael05cqmglr" path="res://assets/GUI/box.png" id="4_nieyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgp5s"]
-texture = ExtResource("2_j6fkb")
+texture = ExtResource("2_0lvaj")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma55q"]
-texture = ExtResource("2_j6fkb")
+texture = ExtResource("2_0lvaj")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvaaf"]
-texture = ExtResource("1_707ni")
-texture_margin_left = 10.0
+texture = ExtResource("3_njo73")
+texture_margin_left = 12.0
 texture_margin_top = 10.0
-texture_margin_right = 10.0
+texture_margin_right = 12.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8ty6"]
-texture = ExtResource("1_707ni")
+texture = ExtResource("3_njo73")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77q7y"]
-texture = ExtResource("1_ahyio")
-texture_margin_left = 27.0
-texture_margin_top = 27.0
-texture_margin_right = 27.0
-texture_margin_bottom = 27.0
+texture = ExtResource("4_nieyh")
+texture_margin_left = 28.0
+texture_margin_top = 22.0
+texture_margin_right = 28.0
+texture_margin_bottom = 22.0
 
 [resource]
 Button/colors/font_outline_color = Color(0, 0, 0, 1)

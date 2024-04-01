@@ -7,8 +7,7 @@ signal  update_heart(current_health)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_health = max_health
-	pass
+	new_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,3 +32,6 @@ func increase_health(amount : int):
 func  is_zero():
 	return current_health == 0
 
+
+func new_game():
+	current_health = max_health

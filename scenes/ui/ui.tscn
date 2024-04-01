@@ -1,18 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://08wn0jfga0oa"]
+[gd_scene load_steps=5 format=3 uid="uid://08wn0jfga0oa"]
 
 [ext_resource type="PackedScene" uid="uid://cj5meuyyihx6j" path="res://scenes/ui/in_game_top.tscn" id="1_7oaqu"]
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_78ec4"]
 [ext_resource type="Theme" uid="uid://5nyl5dj5huyj" path="res://themes/theme_1.tres" id="2_2vhge"]
+[ext_resource type="Theme" uid="uid://dktqh2gx8ajt6" path="res://themes/theme_2.tres" id="2_5sox4"]
 
 [node name="Ui" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_78ec4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_5sox4")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -31,12 +37,34 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/GameOver/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GameOver/PanelContainer"]
 layout_mode = 2
-theme_override_constants/outline_size = 8
+
+[node name="Label" type="Label" parent="MarginContainer/GameOver/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 
+[node name="Button" type="Button" parent="MarginContainer/GameOver/PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
 [node name="InGameTop" parent="MarginContainer" instance=ExtResource("1_7oaqu")]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="pressed" from="MarginContainer/GameOver/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

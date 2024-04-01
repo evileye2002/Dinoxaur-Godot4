@@ -13,7 +13,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	#print(player_state_machine.current_state)
 	if HealthManager.is_zero() and !player_state_machine.current_state == $StateMachine/Dead:
 		player_state_machine.change_state($StateMachine/Dead)
 	
@@ -22,3 +21,8 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	player_state_machine.process_frame(delta)
+
+
+func new_game():
+	if player_state_machine.current_state == $StateMachine/Dead:
+		player_state_machine.change_state($StateMachine/Run)

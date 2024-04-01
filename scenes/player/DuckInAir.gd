@@ -14,8 +14,7 @@ func enter() -> void:
 	duck_col.disabled = false
 
 func process_physics(delta: float) -> State:
-	parent.velocity.y += gravity * delta
-	parent.move_and_slide()
+	set_base_gravity(delta)
 	
 	if !parent.is_on_floor(): gravity = duck_in_air_speed
 	else: 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=43 format=3 uid="uid://cfy556167gjmm"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4wu7p"]
-[ext_resource type="Texture2D" uid="uid://cfmomsqdlb8p6" path="res://assets/Characters/olaf_right.png" id="1_uye3x"]
-[ext_resource type="Texture2D" uid="uid://dafj3oa8ktbmr" path="res://assets/Characters/idle.png" id="2_dq5yp"]
+[ext_resource type="Texture2D" uid="uid://blgt2edx4idep" path="res://assets/Characters/olaf_right.png" id="1_uye3x"]
+[ext_resource type="Texture2D" uid="uid://de7m07r1tfdaf" path="res://assets/Characters/idle.png" id="2_dq5yp"]
 [ext_resource type="PackedScene" uid="uid://dg56gi6fawjo" path="res://scenes/state_machine/state_machine.tscn" id="4_1ou8i"]
 [ext_resource type="Script" path="res://scenes/player/Idle.gd" id="5_1wm2g"]
 [ext_resource type="Script" path="res://scenes/player/Run.gd" id="6_qlxup"]
@@ -198,9 +198,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4c43g")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
-"speed": 14.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,

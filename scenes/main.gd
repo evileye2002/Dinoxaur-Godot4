@@ -26,15 +26,15 @@ var ground_height
 func _ready():
 	screen_size = get_window().size
 	ground_height =ground_col.shape.size.y
-	new_game()
+	ui.restart.connect(new_game)
+	#new_game()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if !is_game_running:
-		if Input.is_action_just_pressed("jump"):
-			is_game_running = true
-			new_game()
+		#if Input.is_action_just_pressed("jump"):
+			#new_game()
 		return
 		
 	if  HealthManager.current_health > 0:
@@ -47,8 +47,11 @@ func new_game():
 	ground.position =  Vector2.ZERO
 	score = 0
 	difficulty = 0
+	object_spawner.new_game()
+	HealthManager.new_game()
+	player.new_game()
+	is_game_running = true
 	get_tree().paused = false
-	ui.run_game(is_game_running)
 	
 func update_difficulty():
 	difficulty = score / DIFFICULTY_MODIFIER
@@ -68,8 +71,12 @@ func run_game(delta):
 	if camera_2d.position.x - ground.position.x > screen_size.x * 2.2:
 		ground.position.x += screen_size.x
 	ui.update_score(score)
-	ui.run_game(is_game_running)
+	ui.check_game(is_game_running)
 	
 	object_spawner.spawn_object()
 	
-
+func game_over():
+	get_tree().paused = true
+	is_game_running = false
+	ui.check_game(is_game_running)
+	

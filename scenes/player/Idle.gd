@@ -11,6 +11,8 @@ func enter() -> void:
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_pressed('jump') and parent.is_on_floor():
+		if !$"../..".get_parent().is_game_running:
+			$"../..".get_parent().new_game()
 		return jump_state
 		
 	return null
