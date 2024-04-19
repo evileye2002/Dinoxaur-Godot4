@@ -78,7 +78,7 @@ centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 texture_filter = 1
-motion_scale = Vector2(0.7, 1)
+motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1248, 0)
 
 [node name="TileMap" type="TileMap" parent="ParallaxLayer3"]

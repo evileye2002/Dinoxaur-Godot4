@@ -20,6 +20,7 @@ position = Vector2(96, 285)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
 
-[node name="Ui" parent="." instance=ExtResource("9_n27ni")]
+[node name="InGameUi" parent="." instance=ExtResource("9_n27ni")]
 
 [node name="ObjectSpawner" parent="." instance=ExtResource("6_oupqx")]
+X_SPAWN_RANGE = Vector2(500, 1000)

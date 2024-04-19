@@ -2,42 +2,25 @@ extends Node2D
 
 const PLAYER_START_POS = Vector2(96,285)
 const CAM_START_POS = Vector2(320,180)
-const START_SPEED : int = 300
-const MAX_SPEED : int = 15
-const SCORE_MODIFIER : int = 5
-const SPEED_MODIFIER : int = 2000
-const DIFFICULTY_MODIFIER : int = 4000
-const MAX_DIFFICULTY : int = 4
-var game_speed : float
-var screen_size : Vector2
-var score : int
-var is_game_running : bool = false
-var difficulty
-var ground_height
 
 @onready var player = $Player
 @onready var camera_2d = $Camera2D
 @onready var ground = $Ground
-@onready var ui = $Ui
+@onready var ui = $InGameUi
 @onready var object_spawner = $ObjectSpawner
-@onready var ground_col = $Ground.get_node("CollisionShape2D")
+@onready var ground_height = $Ground.get_node("CollisionShape2D").shape.size.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_window().size
-	ground_height =ground_col.shape.size.y
 	ui.restart.connect(new_game)
-	#new_game()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if !is_game_running:
-		#if Input.is_action_just_pressed("jump"):
-			#new_game()
+	if !GameManager.is_running:
 		return
 		
-	if  HealthManager.current_health > 0:
+	if HealthManager.current_health > 0:
 		run_game(delta)
 	
 	
@@ -45,38 +28,28 @@ func new_game():
 	player.position = PLAYER_START_POS
 	camera_2d.position = CAM_START_POS
 	ground.position =  Vector2.ZERO
-	score = 0
-	difficulty = 0
-	object_spawner.new_game()
-	HealthManager.new_game()
-	player.new_game()
-	is_game_running = true
-	get_tree().paused = false
 	
-func update_difficulty():
-	difficulty = score / DIFFICULTY_MODIFIER
-	if difficulty > MAX_DIFFICULTY:
-		difficulty = MAX_DIFFICULTY
+	object_spawner.new_game()
+	player.new_game()
+	
+	GameManager.new_game()
+	
 
 func run_game(delta):
-	game_speed = START_SPEED * delta + score / SPEED_MODIFIER
-	if game_speed >= MAX_SPEED:
-		game_speed = MAX_SPEED
-	update_difficulty()
+	GameManager.run_game(delta)
 	
-	player.position.x += game_speed
-	camera_2d.position.x += game_speed
-	score += 1
+	player.position.x += GameManager.speed
+	camera_2d.position.x += GameManager.speed
 	
-	if camera_2d.position.x - ground.position.x > screen_size.x * 2.2:
-		ground.position.x += screen_size.x
-	ui.update_score(score)
-	ui.check_game(is_game_running)
+	if camera_2d.position.x - ground.position.x > GameManager.screen_size.x * 2:
+		ground.position.x += GameManager.screen_size.x
+		
+	ui.update_score(GameManager.score)
+	ui.check_game(GameManager.is_running)
 	
 	object_spawner.spawn_object()
 	
 func game_over():
-	get_tree().paused = true
-	is_game_running = false
-	ui.check_game(is_game_running)
+	GameManager.game_over()
+	ui.check_game(GameManager.is_running)
 	
