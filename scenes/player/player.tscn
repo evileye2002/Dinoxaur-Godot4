@@ -282,10 +282,11 @@ jump_state = NodePath("../Jump")
 fall_state = NodePath("../Fall")
 animation_name = "idle"
 
-[node name="Run" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("duck_run_state", "jump_state")]
+[node name="Run" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("duck_run_state", "jump_state", "fall_state")]
 script = ExtResource("6_qlxup")
 duck_run_state = NodePath("../DuckRun")
 jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
 animation_name = "run"
 
 [node name="DuckRun" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state")]
@@ -314,7 +315,8 @@ animation_name = "fall"
 script = ExtResource("11_3afvt")
 animation_name = "dead"
 
-[node name="Hurt" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state")]
+[node name="Hurt" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("run_state", "fall_state")]
 script = ExtResource("12_bbuqc")
 run_state = NodePath("../Run")
+fall_state = NodePath("../Fall")
 animation_name = "hurt"

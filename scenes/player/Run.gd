@@ -4,6 +4,8 @@ extends State
 var duck_run_state: State
 @export
 var jump_state: State
+@export
+var fall_state: State
 
 @onready var normal_col = $"../../NormalCol"
 @onready var duck_col = $"../../DuckCol"
@@ -24,5 +26,8 @@ func process_input(event: InputEvent) -> State:
 
 func process_physics(delta: float) -> State:
 	set_base_gravity(delta)
+	
+	if parent.velocity.y != 0:
+		return fall_state
 	
 	return null
